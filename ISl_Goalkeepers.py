@@ -63,8 +63,8 @@ def clean_sheets_stats(gk_df):
 
 # Assuming gk_df is your DataFrame containing goalkeeper statistics
 # Call the function to generate and display the plot
-clean_sheets_plot = clean_sheets_stats(gk_df)
-st.plotly_chart(clean_sheets_plot)
+
+
 
 
 
