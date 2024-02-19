@@ -258,7 +258,7 @@ def Max_polar(final_df, player_names):
 st.set_page_config(layout="wide")
 
 
-col1, col2 = st.columns([1, 3])
+col1, col2, col6 = st.columns([1, 3, 1])
 with col1:
     st.image("isl_logo.jpg", width=200)
 with col2:
@@ -266,24 +266,30 @@ with col2:
         "<span style='color: #39ff14; font-size: 48px; font-weight: bold; font-family: Arial, sans-serif;'>ISL GOALKEEPER ANALYSIS</span>",
         unsafe_allow_html=True)
     st.subheader("Analyzing the top rated Goalkeepers in ISL for scouting.")
+with col6:
+    # GitHub icon with hyperlink
+    st.write("Let's Connect:")
+    st.markdown("[![GitHub](https://img.icons8.com/ios-glyphs/45/FFFFFF/github.png)](https://github.com/Aditya369-dot)     "    
+                
+            " [![LinkedIn](https://img.icons8.com/ios-glyphs/45/FFFFFF/linkedin-circled--v2.png)](https://www.linkedin.com/in/aditya-b-231a0a194/)     "
+                
+            "[![Twitter](https://img.icons8.com/ios-glyphs/40/FFFFFF/twitter.png)](https://twitter.com/adibholla21)")
 
 st.write("")
 
 col3, empty_col, col4 = st.columns([3, 1, 1.5])
 
 with col3:
-    content1 = """ **1. Lets start by comparing the No. of cleans sheets of the Goalkeepers in Two 
-    consecutive seasons of ISL 2016 and 2017.** """
+    content1 = """ **1. Let's compare the number of clean sheets recorded by goalkeepers in consecutive seasons of ISL 2016 and 2017.** """
     st.info(content1)
     clean_sheets_plot = clean_sheets_stats(gk_df)
     st.plotly_chart(clean_sheets_plot)
 
     st.write("")
 
-    content2 = """**2.  As the Plot for number of clean sheets was a good starting point, I think
-    it would be a better idea two declutter the graph and take into consideration the players who have played 
-    more than 180 minutes in two consecutive seasons. Clean sheets is a great way to see GK performance but a better 
-    way would be too see sub plots of Goals conceded per season with minutes played**"""
+    content2 = """**2.  As the plot for the number of clean sheets was a good starting point, I believe it would be better to declutter the graph and consider players who have played more than 180 minutes in two consecutive seasons. 
+    While clean sheets are a great indicator of goalkeeper performance, it would be even better to see subplots of goals 
+    conceded per season alongside minutes played.**"""
     st.info(content2)
 
     st.write("")
@@ -291,9 +297,8 @@ with col3:
     st.plotly_chart(goals_conceded_plot)
 
     st.write("")
-    content3 = """**3. Now that we have a good understanding of the macro aspects of the statistics of our GK's which is based on How they performed in the matches in two 
-     consecutive seasons, now i think to figure out the individual capabilities we need to understand the best attributes of the GK's. 
-     The below graph shows 4 quadrants with zones for Catches Vs Punches and their individual stats for those zones**"""
+    content3 = """**3. Now that we have gained insights into the macro aspects of our goalkeepers' statistics, derived from their performance over two consecutive seasons, it's time to delve into their individual capabilities. Understanding the key attributes of goalkeepers is essential for thorough analysis. 
+    The graph below presents four quadrants depicting zones for catches versus punches, along with their respective statistics.**"""
     st.info(content3)
     punches_vs_catches_plot = played_900(gk_df_mins_df)
     st.plotly_chart(punches_vs_catches_plot)
@@ -303,6 +308,9 @@ with col3:
     st.info(content4)
     selected_players = st.multiselect("Select players:", final_df_for_radar["short_name"],
                                       default=[final_df_for_radar.iloc[0]["short_name"]])
+
+    st.markdown("<span style='color: #ff4500; font-size: 24px;'>COMPARISONS</span>",
+                unsafe_allow_html=True)
 
     # Call the Max_polar function with the DataFrame and the player name input
     if selected_players:
@@ -372,7 +380,12 @@ with col4:
     st.title("")
 
 
+st.markdown("<span style='color: #39ff14;'> THIS COMPLETES OUR ANALYSIS AND HOPEFULLY A CLEAR PICTURE ON HOW TO SCOUT THE BEST GOALKEEPER'S USING PYTHON AND DATA ANALYSIS TECHNIQUES."
+                "I HOPE YOU LIKED IT:</span>", unsafe_allow_html=True)
 
+st.markdown("<span style='color: #ff4500; font-size: 24px;'>For the source code please click the link below. Any feedback is appreciated, contact me:</span>",unsafe_allow_html=True)
+st.markdown("[GitHub Source Code](https://github.com/Aditya369-dot/ISL-GK-SCOUTING.git)")
+st.markdown("Contact Email: adityabholla@gmail.com")
 
 
 
