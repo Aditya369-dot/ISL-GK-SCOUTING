@@ -244,7 +244,7 @@ def Max_polar(final_df, player_names):
 
 # User Interface layout starts here
 
-st.set_page_config(layout="wide", theme="dark")
+st.set_page_config(layout="wide")
 
 
 col1, col2, col6 = st.columns([1, 2, 1])
