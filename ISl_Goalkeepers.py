@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+
 # Determining the filepath
 filepath = 'isl_player_final.csv'
 
