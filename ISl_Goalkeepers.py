@@ -247,8 +247,9 @@ def Max_polar(final_df, player_names):
 
 st.set_page_config(layout="wide")
 
+with st.container():
+    col1, col2, col6 = st.columns([1, 2, 1])
 
-col1, col2, col6 = st.columns([1, 2, 1])
 with col1:
     st.image("isl_logo.jpg", width=200)
 with col2:
@@ -267,7 +268,8 @@ with col6:
 
 st.write("")
 
-col3, empty_col, col4 = st.columns([2.5, 1, 1])
+with st.container():
+    col3,emptycol,  col4 = st.columns([2,1, 1])
 
 with col3:
     content1 = """ **1. Let's compare the number of clean sheets recorded by goalkeepers in consecutive seasons of ISL 2016 and 2017.** """
